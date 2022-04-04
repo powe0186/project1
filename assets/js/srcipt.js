@@ -1,4 +1,4 @@
-// .items = array of 10 books.
+
 var bookLink = 'https://www.googleapis.com/books/v1/volumes?q=fantasy+inauthor:sanderson';
 
 fetch(bookLink)
@@ -13,10 +13,16 @@ fetch(bookLink)
 
 
 
+
   // .items = array of 10 books.
 
   //.items[i].volumeInfo  = object with all the book's information
   //.items[i].volumeInfo.title = book title.
+
+  // .items = array of 10 books.
+
+  //.items[i].volumeInfo  = object with all the book's information
+
   //.items[i].volumeInfo.authors = array of strings of authors.
   //.items[i].volumeInfo.imageLinks = object of links for images.
             // .items[i].volumeInfo.imageLinks.smallThumbnail  
@@ -24,6 +30,7 @@ fetch(bookLink)
   //.items[i].volumeInfo.infoLink = link to more information.
   //.items[i].volumeInfo.pageCount  =  gives the page count.
   //.items[i].volumeInfo.publishedDate
+
   //
   //.items[i].volumeInfo  = object with all the book's information
   //.items[i].volumeInfo.authors = array of strings of authors.
@@ -54,3 +61,6 @@ fetch(bookLink)
   .then(function (data) {
     console.log(data);
   });
+
+
+
