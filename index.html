@@ -6,10 +6,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
+
+    <header class="hero is-medium is-link">
+        <div class="hero-body">
+          <p class="title is-1 is-spaced">
+            The Bookworm
+          </p>
+          <p class="subtitle is-3">
+            Let's find your next great read!
+          </p>
+        </div>
+    </header>
+
+    <form class="box">
+        <p class="title">Choose my next book by:</p>
+            <select class="select is-medium is-spaced">
+              <option disabled selected>Select...</option>
+              <option value="Author">Author</option>
+              <option value="Genre">Genre</option>
+            </select>
+            <div>
+            <input class="select is-medium is-spaced" placeholder="Search">
+            </div>
+          </div> 
+      </form>
+
+      <main>
+        <div class="tile is-ancestor">
+            <div class="tile is-parent">
+              <article class="tile is-child box">
+                <p class="title">Your next GREAT read:</p>
+                <p class="subtitle">With some content</p>
+                <div class="content">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+                </div>
+              </article>
+            </div>
+            <div class="tile is-parent is-8">
+              <article class="tile is-child box">
+                <p class="title">Additional Info</p>
+                <p class="subtitle">With some content</p>
+                <div class="content">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+      </main>
+      
+
+
+
+
+
+
+    
+
+    
     
     <script src="./assets/js/srcipt.js"></script>
 </body>
