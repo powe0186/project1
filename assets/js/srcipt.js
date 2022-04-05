@@ -1,5 +1,5 @@
 // .items = array of 10 books.
-var bookLink = 'https://www.googleapis.com/books/v1/volumes?q=fantasy+inauthor:sanderson';
+var bookLink = 'https://www.googleapis.com/books/v1/volumes?q=fantasy'; //+inauthor:sanderson
 
 fetch(bookLink)
   .then(function (response) {
@@ -7,8 +7,19 @@ fetch(bookLink)
   })
   .then(function (data) {
     console.log(data);
-    // window.location =data.items[0].volumeInfo.previewLink;
+    listRecommendations(data);
+    
   });
+
+function listRecommendations(data) {
+  for (let i =0; i < data.items; i++) {
+    var title = data.items[i].volumeInfo.title;
+    var authors =data.items[i].volumeInfo.authors.join(', ');
+    var imgLink = data.items[i].volumeInfo.imageLinks.smallThumbnail;
+    var pagecount = data.items[i].volumeInfo.pageCount;
+    var shortDescription = data.items[i].searchInfo.textSnippet;
+  }
+}
 
 
 
@@ -40,17 +51,14 @@ fetch(bookLink)
   //.items[i].volumeInfo.categories = an array of categories.
 
 
+
   
-  var timesAPIKey = "akMWZ1RHZpEZFEOe0dEWfbwzdSoLjOkC";
-  var timesBestsellersURL = "https://api.nytimes.com/svc/books/v3/reviews.json?author=sanderson&api-key=akMWZ1RHZpEZFEOe0dEWfbwzdSoLjOkC";
-  
-  fetch(timesBestsellersURL, {
-  method: 'GET', //GET is the default.
-  mode: 'cors'
-})
+  fetch()
   .then(function (response) {
-    return response;
+    return response.json();
   })
   .then(function (data) {
     console.log(data);
-  });
+    listRecommendations(data);
+    
+  }); 
