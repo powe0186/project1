@@ -7,7 +7,7 @@ var recSection = $('#recs-go-here');
 
 
 // .items = array of 10 books.
-var bookLink = 'https://www.googleapis.com/books/v1/volumes?q=supernatural%romance'  //inauthor:Brandon%sanderson'; //fantasy+
+var bookLink = 'https://www.googleapis.com/books/v1/volumes?q=inauthor:stephen%king'  //inauthor:Brandon%sanderson'; //fantasy+
 
 fetch(bookLink)
   .then(function (response) {
