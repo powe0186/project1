@@ -51,14 +51,13 @@ function listRecommendations(data) {
   //.items[i].volumeInfo.categories = an array of categories.
 
 
+var timesURL = "https://api.nytimes.com/svc/books/v3//lists/2019-01-20/hardcover-fiction.json";
 
-  
   fetch()
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
     console.log(data);
-    listRecommendations(data);
     
   }); 
