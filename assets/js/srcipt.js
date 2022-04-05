@@ -1,14 +1,13 @@
 // elements that need capturing.
 var authorOrGenre = $('#author');
 var search = $('#search');
-
-
+var recSection = $('#recs-go-here');
 
 
 
 
 // .items = array of 10 books.
-var bookLink = 'https://www.googleapis.com/books/v1/volumes?q=horror%thriller'  //inauthor:Brandon%sanderson'; //fantasy+
+var bookLink = 'https://www.googleapis.com/books/v1/volumes?q=supernatural%romance'  //inauthor:Brandon%sanderson'; //fantasy+
 
 fetch(bookLink)
   .then(function (response) {
@@ -16,11 +15,16 @@ fetch(bookLink)
   })
   .then(function (data) {
     console.log(data);
+    console.log(data.items[1].volumeInfo.description)
     listRecommendations(data);
     
   });
 
 function listRecommendations(data) {
+  console.log("function running");
+  var greatReadP = $('<p class="title">');
+  greatReadP.text("Your next GREAT read:");
+
   for (let i =0; i < data.items.length; i++) {
     var title = data.items[i].volumeInfo.title;
     var authors =data.items[i].volumeInfo.authors.join(', ');
@@ -30,29 +34,44 @@ function listRecommendations(data) {
       console.log("no image");
     }
     var pagecount = data.items[i].volumeInfo.pageCount;
-    var shortDescription = data.items[i].searchInfo.textSnippet;
+    var shortDescription = data.items[i].volumeInfo.description;
+    var rating = data.items[i].volumeInfo.averageRating;
 
-    var bookDiv = $('<div class="tile is-parent">');
+    //create the elements and put them on the page
+    var ancestorDiv = $('<div class="tile is-ancestor">');
+
+    var parentDiv = $('<div class="tile is-parent">');
+    ancestorDiv.append(parentDiv);
+
     var articleDiv = $('<article class="tile is-child box">');
-    bookDiv.append(articleDiv);
-
-    var greatReadP = $('<p class="title">');
-    greatReadP.text("Your next GREAT read:");
-    articleDiv.append(greatReadP);
-
-    var titleP = $('<p class="bookTitle">');
+    parentDiv.append(articleDiv);
+    
+    var titleP = $('<p class="bookTitle title">');
     titleP.text(title);
     articleDiv.append(titleP);
 
-    var imgFig = $('<figure class="image is-128x128">');
-    articleDiv.append(imgFig);
+    var authorP = $('<p class="subtitle">');
+    authorP.text("By " + authors);
+    articleDiv.append(authorP);
 
     var coverImg = $(`<img src="${imgLink}" alt="no cover image available">`)
-    imgFig.append(coverImg);
+    articleDiv.append(coverImg);
 
-    console.log(bookDiv);
+    var descriptionParent = $('<div class="tile is-parent is-8">');
+    ancestorDiv.append(descriptionParent);
 
-    
+    var descriptionArticle = $('<article class="tile is-child box">');
+    descriptionParent.append(descriptionArticle);
+
+    var descriptionP = $('<p class="is-size-22">Description</p>');
+    descriptionP.text(shortDescription);
+    descriptionArticle.append(descriptionP);
+
+    var ratingP = $('<p class="subtitle">Rating</p>');
+    ratingP.text("Average Rating: " + rating + "/5"); // check to see what the rating is out of.
+    descriptionArticle.append(ratingP);
+
+    recSection.append(ancestorDiv);
   }
 }
 
@@ -121,4 +140,3 @@ function listTopTen(data) {
   //data.results.books[i].title     TITLE
   //data.results.books[i].description    DESCRIPTION
   //
-
