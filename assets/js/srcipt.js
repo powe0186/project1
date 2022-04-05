@@ -1,5 +1,14 @@
+// elements that need capturing.
+var authorOrGenre = $('#author');
+var search = $('#search');
+
+
+
+
+
+
 // .items = array of 10 books.
-var bookLink = 'https://www.googleapis.com/books/v1/volumes?q=fantasy+inauthor:sanderson';
+var bookLink = 'https://www.googleapis.com/books/v1/volumes?q=horror%thriller'  //inauthor:Brandon%sanderson'; //fantasy+
 
 fetch(bookLink)
   .then(function (response) {
@@ -12,12 +21,38 @@ fetch(bookLink)
   });
 
 function listRecommendations(data) {
-  for (let i =0; i < data.items; i++) {
+  for (let i =0; i < data.items.length; i++) {
     var title = data.items[i].volumeInfo.title;
     var authors =data.items[i].volumeInfo.authors.join(', ');
-    var imgLink = data.items[i].volumeInfo.imageLinks.smallThumbnail;
+    if (data.items[i].volumeInfo.imageLinks != undefined) {
+      var imgLink = data.items[i].volumeInfo.imageLinks.smallThumbnail;
+    } else { 
+      console.log("no image");
+    }
     var pagecount = data.items[i].volumeInfo.pageCount;
     var shortDescription = data.items[i].searchInfo.textSnippet;
+
+    var bookDiv = $('<div class="tile is-parent">');
+    var articleDiv = $('<article class="tile is-child box">');
+    bookDiv.append(articleDiv);
+
+    var greatReadP = $('<p class="title">');
+    greatReadP.text("Your next GREAT read:");
+    articleDiv.append(greatReadP);
+
+    var titleP = $('<p class="bookTitle">');
+    titleP.text(title);
+    articleDiv.append(titleP);
+
+    var imgFig = $('<figure class="image is-128x128">');
+    articleDiv.append(imgFig);
+
+    var coverImg = $(`<img src="${imgLink}" alt="no cover image available">`)
+    imgFig.append(coverImg);
+
+    console.log(bookDiv);
+
+    
   }
 }
 
@@ -70,4 +105,20 @@ var timesURL = "https://api.nytimes.com/svc/books/v3//lists/2019-01-20/hardcover
   }); 
 
 
+function listTopTen(data) {
+  for (let i = 0; i < 5; i++) {
+    var title = data.results.books[i].title;
+    var author = data.results.books[i].contributor;  // includes the word 'by' before author(s)
+    var coverPic = data.results.books[i].book_image;
+    var description = data.results.books[i].description;
+  }
+}
+
   //New york times top ten stuff we need
+
+  // data.results.books[i].author   AUTHOR
+  //data.results.books[i].book_image  COVER PIC
+  //data.results.books[i].title     TITLE
+  //data.results.books[i].description    DESCRIPTION
+  //
+
