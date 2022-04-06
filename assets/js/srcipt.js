@@ -1,8 +1,6 @@
 // elements that need capturing.
-var authorOrGenre = $('#author');
-var search = $('#search');
 var recSection = $('#recs-go-here');
-
+var searchData;
 
 
 
@@ -14,6 +12,7 @@ fetch(bookLink)
     return response.json();
   })
   .then(function (data) {
+    searchData = data;
     console.log(data);
     console.log(data.items[1].volumeInfo.description)
     listRecommendations(data);
@@ -36,6 +35,7 @@ function listRecommendations(data) {
     var pagecount = data.items[i].volumeInfo.pageCount;
     var shortDescription = data.items[i].volumeInfo.description;
     var rating = data.items[i].volumeInfo.averageRating;
+    var pageCount = data.items[i].volumeInfo.pageCount;
 
     //create the elements and put them on the page
     var ancestorDiv = $('<div class="tile is-ancestor">');
@@ -67,21 +67,39 @@ function listRecommendations(data) {
     descriptionP.text(shortDescription);
     descriptionArticle.append(descriptionP);
 
-    var ratingP = $('<p class="subtitle">Rating</p>');
+    var ratingP = $('<p class="subtitle">');
     ratingP.text("Average Rating: " + rating + "/5"); // check to see what the rating is out of.
     descriptionArticle.append(ratingP);
+
+    var pagesP = $('<p class="subtitle">');
+    pagesP.text('Pages: ' + pageCount);
+    descriptionArticle.append(pagesP);
+
+    var btnDiv = $('<div class="buttons">');
+    var buyBtn = $('<button class="button is-link">');
+    buyBtn.text('Click to buy');
+    btnDiv.append(buyBtn);
+    var readingListBtn = $('<button class="button is-success">');
+    readingListBtn.text('Add to List');
+    readingListBtn.attr('data-num', i);
+    btnDiv.append(readingListBtn);
+    descriptionArticle.append(btnDiv);
+
 
     recSection.append(ancestorDiv);
   }
 }
 
 
+//event listener for buttons in the recommendations section.
+recSection.on('click', function(event) {
+  if (event.target.matches('button')) {
+    
+  }
+
+});
 
 
-
-  // .items = array of 10 books.
-
-  //.items[i].volumeInfo  = object with all the book's information
   //.items[i].volumeInfo.title = book title.
 
   // .items = array of 10 books.
@@ -132,6 +150,10 @@ function listTopTen(data) {
     var description = data.results.books[i].description;
   }
 }
+
+
+
+
 
   //New york times top ten stuff we need
 

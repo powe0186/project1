@@ -1,98 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/reset.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+  <title>Document</title>
 </head>
+
 <body>
 
-    <header class="hero is-small is-link">
-        <div class="hero-body">
-          <p class="title is-1 is-spaced">
-            <img src="./icons/bookworm.png" alt="bookworm">
-            The Bookworm
-          </p>
-          <p class="subtitle is-3">
-            Let's find your next great read!
-          </p>
-        </div>
-    </header>
-    
-    <!-- For for choosing author and key phrases -->
-    <form class="box">
-        <p class="title">Choose my next book by:</p>
-        <select class="select is-medium is-spaced">
-            <option disabled selected>Select...</option>
-            <option value="Author">Author</option>
-            <option value="Genre">Keyphrase</option>
-        </select>
-        <div>
-            <input class="select is-medium is-spaced" placeholder="Search">
-        </div> 
-    </form>
-
-    <main id="recs-go-here">
-        <p class="title">Your next GREAT read:</p>
-         <!-- Start Card holding one book -->
-        <div class="tile is-ancestor">
-            <div class="tile is-parent">
-              <article class="tile is-child box">
-                <p class="bookTitle">Title here</p>
-                <p class="subtitle">by the author</p>
-                <img src="https://bulma.io/images/placeholders/640x480.png">
-              </article>
-            </div>
-            <div class="tile is-parent is-8">
-              <article class="tile is-child box">
-                <p class="title">Description</p>
-                <p class="subtitle">Rating</p>
-                <div class="content">
-                  <ul>
-                    <li>Pages: </li>
-                    <li>Genre: </li>
-                    <li>Type Fiction/Non-fiction: </li>
-                  </ul>
-                </div>
-              </article>
-            </div>
-          </div>
-          <!-- End Book Card -->
-          
-      </main>
-
-    <div class= "start-screen">
-        <div class="container is-fluid">
-          <div class=" title is-primary">
-            <h1 id="NYTimes"> Check Out Today's New York Times Best-Sellers:</h1>
-          </div>
-        </div>
+  <header class="hero is-small is-link">
+    <div class="hero-body">
+      <p class="title is-1 is-spaced">
+        <img src="./icons/bookworm.png" alt="bookworm">
+        The Bookworm
+      </p>
+      <p class="subtitle is-3">
+        Let's find your next great read!
+      </p>
     </div>
+  </header>
 
-      
-      <footer class="footer">
-        <div class="content has-text-centered">
-          <p>
-            <a href="https://www.flaticon.com/free-icons/bookworm" title="bookworm icons">Bookworm icons created by pongsakornRed - Flaticon</a>
-          </p>
-        </div>
-      </footer>
-      
+  <!-- For for choosing author and key phrases -->
+  <form class="box">
+    <p class="title">Choose my next book by:</p>
+    <select id = "class="select is-medium is-spaced">
+      <option disabled selected>Select...</option>
+      <option value="Author">Author</option>
+      <option value="Genre">Keyphrase</option>
+    </select>
+    <div>
+      <input class="select is-medium is-spaced" placeholder="Search">
+    </div>
+  </form>
+
+  <main id="recs-go-here">
+    <p class="title">Your next GREAT read:</p>
+    <!-- Book Suggestion cards dynamically created Here -->
+  </main>
+
+  <div class="start-screen">
+    <div class="container is-fluid">
+      <div class=" title is-primary">
+        <h1 id="NYTimes"> Check Out Today's New York Times Best-Sellers:</h1>
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <a href="https://www.flaticon.com/free-icons/bookworm" title="bookworm icons">Bookworm icons created by
+          pongsakornRed - Flaticon</a>
+      </p>
+    </div>
+  </footer>
 
 
 
 
 
 
-    
 
-    
-    
-    <script src="./assets/js/srcipt.js"></script>
+
+
+
+
+  <script src="./assets/js/srcipt.js"></script>
 </body>
+
 </html>
