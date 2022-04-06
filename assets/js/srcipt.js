@@ -5,7 +5,7 @@ var search = $('#search');
 var recSection = $('#recs-go-here');
 var searchData;
 var readingList = getList();
-
+var timesListDiv = $('#times-list');
 
 
 // .items = array of 10 books.
@@ -99,7 +99,8 @@ recSection.on('click', function(event) {
     var targetBtn = $(event.target);
     var bookNum = targetBtn.attr('data-num');
     console.log("The number is " + bookNum);
-    addToList(bookNum)
+    addToList(bookNum);
+    window.location="MyReadingList.html";
   }
 
 });
@@ -152,8 +153,10 @@ function addToList(i) {
   //.items[i].volumeInfo.publisher
   //.items[i].volumeInfo.categories = an array of categories.
 
-
-var timesURL = "https://api.nytimes.com/svc/books/v3//lists/2019-01-20/hardcover-fiction.json?api-key=akMWZ1RHZpEZFEOe0dEWfbwzdSoLjOkC";
+// Ben's key:  akMWZ1RHZpEZFEOe0dEWfbwzdSoLjOkC
+// Karen's Key: 
+var lastWednesday = moment().day(-4).format('YYYY-MM-DD');
+var timesURL = "https://api.nytimes.com/svc/books/v3//lists/" + lastWednesday + "/hardcover-fiction.json?api-key=akMWZ1RHZpEZFEOe0dEWfbwzdSoLjOkC";
 
   fetch(timesURL)
   .then(function (response) {
@@ -161,17 +164,45 @@ var timesURL = "https://api.nytimes.com/svc/books/v3//lists/2019-01-20/hardcover
   })
   .then(function (data) {
     console.log(data);
+    listTopFive(data);
     
   }); 
 
 
-function listTopTen(data) {
+function listTopFive(data) {
   for (let i = 0; i < 5; i++) {
     var title = data.results.books[i].title;
     var author = data.results.books[i].contributor;  // includes the word 'by' before author(s)
     var coverPic = data.results.books[i].book_image;
-    var description = data.results.books[i].description;
+    var bookLink = data.results.books[i].buy_links[0].url;
+    
+    var timesBookDiv = $('<div class="tile is-parent">');
+    timesListDiv.append(timesBookDiv);
+
+    var timesBookArticle = $('<article class="tile is-child box">');
+    timesBookDiv.append(timesBookArticle);
+
+    
+
+    var timesBookTile = $('<p class="title">');
+    timesBookTile.text(title);
+    var timesBookAuthor = $('<p class="subtitle">');
+    timesBookAuthor.text(author);
+    var bookImg = $(`<img src="${coverPic}" width="200px">`);
+
+    timesBookArticle.append(timesBookTile);
+    timesBookArticle.append(timesBookAuthor);
+    var bookA = $(`<a href="${bookLink}">`);
+    timesBookArticle.append(bookA);
+    bookA.append(bookImg);
+    
   }
+}
+
+function timesTopFive() {
+
+  
+
 }
 
 
