@@ -1,5 +1,6 @@
 // elements that need capturing.
-var authorOrGenre = $('#author');
+var author = $('#author');
+var keyphrase = $('#keyphrase');
 var search = $('#search');
 var recSection = $('#recs-go-here');
 
