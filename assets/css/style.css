@@ -1,0 +1,67 @@
+body {
+    background-color: hsl(217, 71%, 53%);
+}
+
+.box {
+    background-color: hsl(217, 71%, 53%);
+}
+
+#footer {
+    background-color: hsl(217, 71%, 53%);
+    border-top: 3px solid black;
+}
+
+#header #headerTitle {
+    color: #fff;
+}
+
+#header #headerSubtitle {
+    color: #fff;
+}
+
+/* book list link margins */
+#bookListLink {
+    font-size: 20px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    cursor: default;
+    display: block;
+    width: 280px;
+}
+/* Adding border to link to book list page */
+#bookListLink strong {
+    border: 2px solid white;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    display: block;
+    width: 280px;
+}
+/* NY Times best seller title margins */
+.title #NYTimes {
+    color: #fff;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    padding-top: 25px;
+    border-top: 3px solid black;
+}
+
+#recs-go-here #mainBodyTitle {
+    margin-bottom: 45px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 20px;
+    color: #fff;
+}
+
+#nytimesSection {
+    margin-bottom: 110px;
+}
+
+#footer #pongCopyWright {
+    color: #fff;
+    font-size: 17px;
+    float: left;
+}
