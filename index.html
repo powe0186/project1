@@ -10,22 +10,23 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
-    <title>Book Finder</title>
+    <title>Book Worm</title>
 </head>
 
 <body>
 
-    <header class="hero is-small is-link">
+    <header class="hero is-small" id="header">
         <div class="hero-body">
-          <p class="title is-1 is-spaced">
+          <p class="title is-1 is-spaced" id="headerTitle">
             <img src="./icons/bookworm.png" alt="bookworm">
             The Bookworm
           </p>
-          <p class="subtitle is-3">
+          <p class="subtitle is-3" id="headerSubtitle">
             Let's find your next great read!
           </p>
         </div>
-        <a href="./MyReadingList.html">My-List</a>
+        <!-- Link to book list page -->
+        <a id="bookListLink" href="./MyReadingList.html"><strong>Click here for your book list</strong></a>
     </header>
     
     <!-- For for choosing author and key phrases -->
@@ -47,24 +48,27 @@
       <!-- Book suggestions created here dynamically -->
     </main>
 
-    <div class= "start-screen">
+    <div class= "start-screen" id="nytimesSection">
         <div class="container is-fluid">
           <div class="title is-primary">
             <h1 id="NYTimes"> Check Out This Week's New York Times Best-Sellers:</h1>
           </div>
           <div id="times-list" class="tile is-ancestor">
           </div>
-
-
         </div>
     </div>
-  </header>
 
       <!-- Copywright link to icons used -->
-      <footer class="footer">
+      <footer class="footer" id="footer">
         <div class="content has-text-centered">
           <p>
-            <a href="https://www.flaticon.com/free-icons/bookworm" title="bookworm icons">Bookworm icons created by pongsakornRed - Flaticon</a>
+            <a href="https://www.flaticon.com/free-icons/bookworm" title="bookworm icons" id="pongCopyWright">Bookworm icon created by pongsakornRed - Flaticon</a>
+          </p>
+          <p id="groupNames">
+           Created by: Ben Powell,
+            Karen Mitchell,
+            Alex Lane,
+            Mike Kubesheski
           </p>
         </div>
       </footer>
