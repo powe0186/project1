@@ -99,7 +99,8 @@ recSection.on('click', function(event) {
     var targetBtn = $(event.target);
     var bookNum = targetBtn.attr('data-num');
     console.log("The number is " + bookNum);
-    addToList(bookNum)
+    addToList(bookNum);
+    window.location="MyReadingList.html";
   }
 
 });
