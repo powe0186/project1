@@ -1,6 +1,10 @@
 // elements that need capturing.
+var author = $('#author');
+var keyphrase = $('#keyphrase');
+var search = $('#search');
 var recSection = $('#recs-go-here');
 var searchData;
+var readingList = getList();
 
 
 
@@ -36,7 +40,7 @@ function listRecommendations(data) {
     var shortDescription = data.items[i].volumeInfo.description;
     var rating = data.items[i].volumeInfo.averageRating;
     var pageCount = data.items[i].volumeInfo.pageCount;
-
+  
     //create the elements and put them on the page
     var ancestorDiv = $('<div class="tile is-ancestor">');
 
@@ -76,9 +80,6 @@ function listRecommendations(data) {
     descriptionArticle.append(pagesP);
 
     var btnDiv = $('<div class="buttons">');
-    var buyBtn = $('<button class="button is-link">');
-    buyBtn.text('Click to buy');
-    btnDiv.append(buyBtn);
     var readingListBtn = $('<button class="button is-success">');
     readingListBtn.text('Add to List');
     readingListBtn.attr('data-num', i);
@@ -93,12 +94,34 @@ function listRecommendations(data) {
 
 //event listener for buttons in the recommendations section.
 recSection.on('click', function(event) {
+  
   if (event.target.matches('button')) {
-    
+    var targetBtn = $(event.target);
+    var bookNum = targetBtn.attr('data-num');
+    console.log("The number is " + bookNum);
+    addToList(bookNum)
   }
 
 });
 
+function getList() {
+  if (localStorage.readingList === undefined) {
+    return JSON.parse('[]');
+  } else {
+    return JSON.parse(localStorage.readingList);
+  }
+}
+
+function addToList(i) {
+  var newBook = {
+    title: searchData.items[i].volumeInfo.title,
+    author: searchData.items[i].volumeInfo.authors[0],
+    img: searchData.items[i].volumeInfo.imageLinks.smallThumbnail,
+    isRead: false
+  }
+  readingList.push(newBook);
+  localStorage.setItem('readingList', JSON.stringify(readingList));
+}
 
   //.items[i].volumeInfo.title = book title.
 

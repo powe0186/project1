@@ -15,44 +15,44 @@
 
 <body>
 
-  <header class="hero is-small is-link">
-    <div class="hero-body">
-      <p class="title is-1 is-spaced">
-        <img src="./icons/bookworm.png" alt="bookworm">
-        The Bookworm
-      </p>
-      <p class="subtitle is-3">
-        Let's find your next great read!
-      </p>
+    <header class="hero is-small is-link">
+        <div class="hero-body">
+          <p class="title is-1 is-spaced">
+            <img src="./icons/bookworm.png" alt="bookworm">
+            The Bookworm
+          </p>
+          <p class="subtitle is-3">
+            Let's find your next great read!
+          </p>
+        </div>
+    </header>
+    
+    <!-- For for choosing author and key phrases -->
+    <form class="box">
+        <p class="title">Choose my next book by:</p>
+        <select class="select is-medium is-spaced">
+            <option disabled selected>Select...</option>
+            <option id="author" value="Author">Author</option>
+            <option id="keyphrase" value="Genre">Keyphrase</option>
+        </select>
+        <div>
+            <input id="search" class="select is-medium is-spaced" placeholder="Search">
+        </div> 
+    </form>
+
+    <main id="recs-go-here">
+      <p class="title">Your next GREAT read:</p>
+      <!-- Book suggestions created here dynamically -->
+    </main>
+
+    <div class= "start-screen">
+        <div class="container is-fluid">
+          <div class=" title is-primary">
+            <h1 id="NYTimes"> Check Out Today's New York Times Best-Sellers:</h1>
+          </div>
+        </div>
     </div>
   </header>
-
-  <!-- For for choosing author and key phrases -->
-  <form class="box">
-    <p class="title">Choose my next book by:</p>
-    <select id = "class="select is-medium is-spaced">
-      <option disabled selected>Select...</option>
-      <option value="Author">Author</option>
-      <option value="Genre">Keyphrase</option>
-    </select>
-    <div>
-      <input class="select is-medium is-spaced" placeholder="Search">
-    </div>
-  </form>
-
-  <main id="recs-go-here">
-    <p class="title">Your next GREAT read:</p>
-    <!-- Book Suggestion cards dynamically created Here -->
-  </main>
-
-  <div class="start-screen">
-    <div class="container is-fluid">
-      <div class=" title is-primary">
-        <h1 id="NYTimes"> Check Out Today's New York Times Best-Sellers:</h1>
-      </div>
-    </div>
-  </div>
-
 
   <footer class="footer">
     <div class="content has-text-centered">
@@ -62,15 +62,6 @@
       </p>
     </div>
   </footer>
-
-
-
-
-
-
-
-
-
 
 
   <script src="./assets/js/srcipt.js"></script>
