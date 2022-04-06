@@ -46,7 +46,7 @@ body {
     padding-top: 25px;
     border-top: 3px solid black;
 }
-
+/* Body title margin and white color */
 #recs-go-here #mainBodyTitle {
     margin-bottom: 45px;
     margin-top: 10px;
@@ -55,13 +55,19 @@ body {
     padding-top: 20px;
     color: #fff;
 }
-
+/* Margin for the ny times section */
 #nytimesSection {
-    margin-bottom: 110px;
+    margin-bottom: 90px;
 }
-
+/* footer font color and positioning */
 #footer #pongCopyWright {
     color: #fff;
     font-size: 17px;
     float: left;
+}
+
+#footer #groupNames {
+    color: #fff;
+    font-size: 17px;
+    float: right;
 }
