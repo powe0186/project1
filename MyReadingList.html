@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
     <title>To-Read List</title>
 </head>
 <body>
@@ -26,33 +27,9 @@
     <section>
         <div class="tile is-ancestor">
             <div class="tile is-parent">
-              <article class="tile is-child box">
-                <p class="bookTitle title">To-Read: 📖
-                  <article class="panel is-primary">
-        
-                    <a class="panel-block is-active">
-                      <span class="panel-icon">
-                        <i class="fas fa-book" aria-hidden="true"></i>
-                      </span>
-                      <label class="checkbox">
-                        <input type="checkbox">
-                        1st Book
-                      </label>
-                    </a>
-                    <article class="panel is-primary">
-        
-                      <a class="panel-block is-active">
-                        <span class="panel-icon">
-                          <i class="fas fa-book" aria-hidden="true"></i>
-                        </span>
-                        <label class="checkbox">
-                          <input type="checkbox">
-                          2nd Book
-                        </label>
-                      </a>
-                </p>
-                <p class="subtitle"></p>
-              </article>
+              <article id="yettoRead" class="tile is-child box">
+                <p class="bookTitle title">To-Read: 📖</p>
+                
             </div>
             <div class="tile is-parent is-6">
               <article class="tile is-child box">
@@ -68,7 +45,7 @@
 
 
 
-
+    <script src="./assets/js/booklist.js"></script>
     
 </body>
 </html>
