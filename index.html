@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +9,9 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>Book Finder</title>
 </head>
+
 <body>
 
     <header class="hero is-small is-link">
@@ -22,6 +24,7 @@
             Let's find your next great read!
           </p>
         </div>
+        <a href="./MyReadingList.html">My-List</a>
     </header>
     
     <!-- For for choosing author and key phrases -->
@@ -34,10 +37,12 @@
         </select>
         <div>
             <input id="search" class="select is-medium is-spaced" placeholder="Search">
+            <button class="button is-medium is-link is-outlined" type="submit" form="box" value="Submit">Search</button>
         </div> 
     </form>
 
     <main id="recs-go-here">
+<<<<<<< HEAD
         <p class="title">Your next GREAT read:</p>
          <!-- Start Card holding one book -->
         <div class="tile is-ancestor">
@@ -70,6 +75,11 @@
           <!-- End Book Card -->
           
       </main>
+=======
+      <p class="title">Your next GREAT read:</p>
+      <!-- Book suggestions created here dynamically -->
+    </main>
+>>>>>>> main
 
     <div class= "start-screen">
         <div class="container is-fluid">
@@ -114,8 +124,9 @@
 
         </div>
     </div>
+  </header>
 
-      
+      <!-- Copywright link to icons used -->
       <footer class="footer">
         <div class="content has-text-centered">
           <p>
@@ -126,14 +137,7 @@
       
 
 
-
-
-
-
-    
-
-    
-    
-    <script src="./assets/js/srcipt.js"></script>
+  <script src="./assets/js/srcipt.js"></script>
 </body>
+
 </html>

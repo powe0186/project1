@@ -3,18 +3,20 @@ var author = $('#author');
 var keyphrase = $('#keyphrase');
 var search = $('#search');
 var recSection = $('#recs-go-here');
-
+var searchData;
+var readingList = getList();
 
 
 
 // .items = array of 10 books.
-var bookLink = 'https://www.googleapis.com/books/v1/volumes?q=supernatural%romance'  //inauthor:Brandon%sanderson'; //fantasy+
+var bookLink = 'https://www.googleapis.com/books/v1/volumes?q=inauthor:stephen%king'  //inauthor:Brandon%sanderson'; //fantasy+
 
 fetch(bookLink)
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
+    searchData = data;
     console.log(data);
     console.log(data.items[1].volumeInfo.description)
     listRecommendations(data);
@@ -37,7 +39,8 @@ function listRecommendations(data) {
     var pagecount = data.items[i].volumeInfo.pageCount;
     var shortDescription = data.items[i].volumeInfo.description;
     var rating = data.items[i].volumeInfo.averageRating;
-
+    var pageCount = data.items[i].volumeInfo.pageCount;
+  
     //create the elements and put them on the page
     var ancestorDiv = $('<div class="tile is-ancestor">');
 
@@ -68,15 +71,28 @@ function listRecommendations(data) {
     descriptionP.text(shortDescription);
     descriptionArticle.append(descriptionP);
 
-    var ratingP = $('<p class="subtitle">Rating</p>');
+    var ratingP = $('<p class="subtitle">');
     ratingP.text("Average Rating: " + rating + "/5"); // check to see what the rating is out of.
     descriptionArticle.append(ratingP);
+
+    var pagesP = $('<p class="subtitle">');
+    pagesP.text('Pages: ' + pageCount);
+    descriptionArticle.append(pagesP);
+
+    var btnDiv = $('<div class="buttons">');
+    var readingListBtn = $('<button class="button is-success">');
+    readingListBtn.text('Add to List');
+    readingListBtn.attr('data-num', i);
+    btnDiv.append(readingListBtn);
+    descriptionArticle.append(btnDiv);
+
 
     recSection.append(ancestorDiv);
   }
 }
 
 
+<<<<<<< HEAD
 const starTotal = 5;
  
 for(const rating in ratings) {  
@@ -87,11 +103,39 @@ for(const rating in ratings) {
   // 4
   document.querySelector(`.${rating} .stars-inner`).style.width = starPercentageRounded; 
 }
+=======
+//event listener for buttons in the recommendations section.
+recSection.on('click', function(event) {
+  
+  if (event.target.matches('button')) {
+    var targetBtn = $(event.target);
+    var bookNum = targetBtn.attr('data-num');
+    console.log("The number is " + bookNum);
+    addToList(bookNum)
+  }
 
+});
+>>>>>>> main
 
-  // .items = array of 10 books.
+function getList() {
+  if (localStorage.readingList === undefined) {
+    return JSON.parse('[]');
+  } else {
+    return JSON.parse(localStorage.readingList);
+  }
+}
 
-  //.items[i].volumeInfo  = object with all the book's information
+function addToList(i) {
+  var newBook = {
+    title: searchData.items[i].volumeInfo.title,
+    author: searchData.items[i].volumeInfo.authors[0],
+    img: searchData.items[i].volumeInfo.imageLinks.smallThumbnail,
+    isRead: false
+  }
+  readingList.push(newBook);
+  localStorage.setItem('readingList', JSON.stringify(readingList));
+}
+
   //.items[i].volumeInfo.title = book title.
 
   // .items = array of 10 books.
@@ -142,6 +186,10 @@ function listTopTen(data) {
     var description = data.results.books[i].description;
   }
 }
+
+
+
+
 
   //New york times top ten stuff we need
 
