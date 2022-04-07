@@ -13,11 +13,20 @@ body {
 
 #header #headerTitle {
     color: #fff;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 #header #headerSubtitle {
     color: #fff;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+#recs-go-here #mainTitle {
+    color: #fff;
+    padding-left: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 
 /* book list link margins */
 #bookListLink {
@@ -27,6 +36,7 @@ body {
     cursor: default;
     display: block;
     width: 280px;
+    text-decoration: underline;
 }
 /* Adding border to link to book list page */
 #bookListLink strong {
@@ -41,13 +51,15 @@ body {
 
 #searchpageLink {
     border: 2px solid white;
+    font-size: 20px;
     color: #fff;
     border-radius: 5px;
     padding: 5px;
     cursor: pointer;
     display: block;
-    width: 325px;
+    width: 390px;
     margin: 10px;
+    text-decoration: underline;
 }
 /* NY Times best seller title margins */
 .title #NYTimes {
@@ -70,6 +82,10 @@ body {
 #nytimesSection {
     margin-bottom: 90px;
 }
+
+#nytimesSection #NYTimes {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 /* footer font color and positioning */
 #footer #pongCopyWright {
     color: #fff;
@@ -83,6 +99,6 @@ body {
     float: right;
 }
 
-#recs-go-here p {
-    color: #fff;
+#footer {
+    margin-top: 30px;
 }
