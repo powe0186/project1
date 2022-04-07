@@ -38,6 +38,17 @@ body {
     display: block;
     width: 280px;
 }
+
+#searchpageLink {
+    border: 2px solid white;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    display: block;
+    width: 325px;
+    margin: 10px;
+}
 /* NY Times best seller title margins */
 .title #NYTimes {
     color: #fff;
