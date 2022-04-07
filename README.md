@@ -1,52 +1,84 @@
-# project1
-
-"Ask a Librarian"
- -What should I read next?
- -Top recommendations for YOU based on (last read, favorite author, genre, etc)
- -Today in Book News (i.e NYT bestseller list, article like Ben's fav kickstarter, etc)
-
-API we plan to use:
-GoodReads
-Google Books
-
-Use Bulma for CSS framework
-Save a Reading checklist List or "To Read" to internal storage
-
-Alex Ideas-
-    -submit favorite book or author, then website suggests more options.-submit
-    -Random book suggestion
-    -o
- favorites? (we each input our fav books and have a section that scycles through them)
-
-    -check boxes for fav lists    
-Book reviews can come from GoodBooks api
-
-API
-INTRODUCTION
-The Goodreads API allows developers access to Goodreads data in order to help websites or applications that deal with books be more personalized, social, and engaging. The API can be used in many ways, including:
-
-Get an xml response that contains the review and rating for the specified book and user
-URL: https://www.goodreads.com/review/show_by_user_and_book.xml    (sample url)
-HTTP method: GET
-Parameters:
-    key: Developer key (required).
-    user_id: id of the user
-    book_id: id of the book
-    include_review_on_work: 'true' or 'false' indicating whether to return a review for another book in the same work if review not found for the specified book (default 'false', optional)
-
-Find an author by name
-
-Get a user's review for a given book
+<div id="top"></div>
 
 
-)
 
- 
- suggested book form
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/powe0186/project1">
+    <img src="./assets/bookworm.png" alt="Logo" width="80" height="80">
+  </a>
 
--genre
--fiction/nonfiction
--length
--Favorite author
+<h3 align="center">project_title</h3>
 
+  <p align="center">
+    project_description
+    <br />
+    <a href="https://github.com/powe0186/project1"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/powe0186/project1">View Demo</a>
+    ·
+    <a href="https://github.com/powe0186/project1/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/powe0186/project1/issues">Request Feature</a>
+  </p>
+</div>
+
+
+<img src="./assets/screenshot.png" alt="Logo">
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+  This web app allows you to search books by author or any keyphrase. It gives you a list of book suggestions based on you search. You may then save any searches to your reading list. You may also move books from your reading list to a list of books you have finished. 
+
+  At initial load, the page gives you the current NY Times top 5 books.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+### Built With
+* [Google Books API] (https://developers.google.com/books)
+* [NY Times Books API] (https://developer.nytimes.com/docs/books-product/1/overview)
+* [moment.js](https://momentjs.com/)
+* [bulma](https://bulma.io/)
+* [JQuery](https://jquery.com)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+
+Project Link: [https://github.com/powe0186/project1](https://github.com/powe0186/project1)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
