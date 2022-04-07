@@ -78,7 +78,8 @@ Ben Powell - email@email_client.com
 Karen Mitchell - email@email_client.com
 Mike Kubesheski - email@email_client.com
 
-Project Link: [https://github.com/powe0186/project1](https://github.com/powe0186/project1)
+Project Link: [https://github.com/powe0186/project1](https://github.com/powe0186/project1) <br></br>
+Live Link: https://powe0186.github.io/project1/
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
