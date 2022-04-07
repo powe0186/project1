@@ -73,7 +73,7 @@
 <!-- CONTACT -->
 ## Contact
 
-Alex Lanee - email@email_client.com
+Alex Lane - email@email_client.com
 Ben Powell - email@email_client.com
 Karen Mitchell - email@email_client.com
 Mike Kubesheski - email@email_client.com
