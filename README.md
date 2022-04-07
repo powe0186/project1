@@ -73,10 +73,10 @@
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Alex Lane - email@email_client.com
+Ben Powell - email@email_client.com
+Karen Mitchell - email@email_client.com
+Mike Kubesheski - email@email_client.com
 
 Project Link: [https://github.com/powe0186/project1](https://github.com/powe0186/project1)
 
