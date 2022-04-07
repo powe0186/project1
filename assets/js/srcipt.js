@@ -10,7 +10,8 @@ var timesListDiv = $('#times-list');
 // Search button creates URL, erases any current searches, fetches,
 // and loads new searches.
 
-searchBtn.on('click', function() {
+searchBtn.on('click', function(event) {
+  event.preventDefault();
   var searchParam = search.val();
   //create URL:
   var keyOrAuth = dropdown.val();
@@ -84,7 +85,11 @@ function listRecommendations(data) {
     descriptionArticle.append(descriptionP);
 
     var ratingP = $('<p class="subtitle">');
-    ratingP.text("Average Rating: " + rating + "/5"); // check to see what the rating is out of.
+    if (rating != undefined) {
+      ratingP.text("Average Rating: " + rating + "/5"); // check to see what the rating is out of.
+    } else {
+      ratingP.text('No Ratings available.');
+    }
     descriptionArticle.append(ratingP);
 
     var pagesP = $('<p class="subtitle">');
@@ -135,17 +140,6 @@ function addToList(i) {
   localStorage.setItem('readingList', JSON.stringify(readingList));
 }
 
-
-const starTotal = 5;
- 
-for(const rating in ratings) {  
-  // 2
-  const starPercentage = (ratings[rating] / starTotal) * 100;
-  // 3
-  const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
-  // 4
-  document.querySelector(`.${rating} .stars-inner`).style.width = starPercentageRounded; 
-}
   //.items[i].volumeInfo.title = book title.
 
   // .items = array of 10 books.
