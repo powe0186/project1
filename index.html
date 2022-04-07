@@ -32,14 +32,14 @@
     <!-- For for choosing author and key phrases -->
     <form class="box">
         <p class="title">Choose my next book by:</p>
-        <select class="select is-medium is-spaced">
+        <select id="key-or-auth" class="select is-medium is-spaced">
             <option disabled selected>Select...</option>
-            <option id="author" value="Author">Author</option>
-            <option id="keyphrase" value="Genre">Keyphrase</option>
+            <option id="author" value="author">Author</option>
+            <option id="keyphrase" value="keyphrase">Keyphrase</option>
         </select>
         <div>
             <input id="search" class="select is-medium is-spaced" placeholder="Search">
-            <button class="button is-medium is-link is-outlined" type="submit" form="box" value="Submit">Search</button>
+            <button id = "search-btn" class="button is-medium is-link is-outlined" type="submit" form="box" value="Submit">Search</button>
         </div> 
     </form>
 

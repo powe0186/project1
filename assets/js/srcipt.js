@@ -1,30 +1,44 @@
 // elements that need capturing.
-var author = $('#author');
-var keyphrase = $('#keyphrase');
+var dropdown = $('#key-or-auth');
 var search = $('#search');
+var searchBtn = $('#search-btn');
 var recSection = $('#recs-go-here');
 var searchData;
 var readingList = getList();
 var timesListDiv = $('#times-list');
 
+// Search button creates URL, erases any current searches, fetches,
+// and loads new searches.
 
-// .items = array of 10 books.
-var bookLink = 'https://www.googleapis.com/books/v1/volumes?q=inauthor:stephen%king'  //inauthor:Brandon%sanderson'; //fantasy+
+searchBtn.on('click', function() {
+  var searchParam = search.val();
+  //create URL:
+  var keyOrAuth = dropdown.val();
+  if (keyOrAuth === 'author') {
+    var bookLink = 'https://www.googleapis.com/books/v1/volumes?q=inauthor:' + searchParam;
+    console.log(bookLink);
+  } else if (keyOrAuth === 'keyphrase') {
+    var paramArray = searchParam.split(' ');
+    var bookLink = 'https://www.googleapis.com/books/v1/volumes?q=horror' + searchParam;
 
-fetch(bookLink)
+  }
+
+  // Clear any current search:
+  recSection.html("");
+  fetch(bookLink)
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
     searchData = data;
     console.log(data);
-    console.log(data.items[1].volumeInfo.description)
     listRecommendations(data);
     
   });
+})
+
 
 function listRecommendations(data) {
-  console.log("function running");
   var greatReadP = $('<p class="title">');
   greatReadP.text("Your next GREAT read:");
 
@@ -98,7 +112,6 @@ recSection.on('click', function(event) {
   if (event.target.matches('button')) {
     var targetBtn = $(event.target);
     var bookNum = targetBtn.attr('data-num');
-    console.log("The number is " + bookNum);
     addToList(bookNum);
     window.location="MyReadingList.html";
   }
@@ -163,7 +176,6 @@ var timesURL = "https://api.nytimes.com/svc/books/v3//lists/" + lastWednesday + 
     return response.json();
   })
   .then(function (data) {
-    console.log(data);
     listTopFive(data);
     
   }); 
