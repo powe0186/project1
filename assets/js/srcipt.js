@@ -19,7 +19,7 @@ searchBtn.on('click', function() {
     console.log(bookLink);
   } else if (keyOrAuth === 'keyphrase') {
     var paramArray = searchParam.split(' ');
-    var bookLink = 'https://www.googleapis.com/books/v1/volumes?q=horror' + searchParam;
+    var bookLink = 'https://www.googleapis.com/books/v1/volumes?q=' + searchParam;
 
   }
 
