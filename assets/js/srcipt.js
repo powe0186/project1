@@ -10,7 +10,8 @@ var timesListDiv = $('#times-list');
 // Search button creates URL, erases any current searches, fetches,
 // and loads new searches.
 
-searchBtn.on('click', function() {
+searchBtn.on('click', function(event) {
+  event.preventDefault();
   var searchParam = search.val();
   //create URL:
   var keyOrAuth = dropdown.val();
@@ -84,7 +85,11 @@ function listRecommendations(data) {
     descriptionArticle.append(descriptionP);
 
     var ratingP = $('<p class="subtitle">');
-    ratingP.text("Average Rating: " + rating + "/5"); // check to see what the rating is out of.
+    if (rating != undefined) {
+      ratingP.text("Average Rating: " + rating + "/5"); // check to see what the rating is out of.
+    } else {
+      ratingP.text('No Ratings available.');
+    }
     descriptionArticle.append(ratingP);
 
     var pagesP = $('<p class="subtitle">');
