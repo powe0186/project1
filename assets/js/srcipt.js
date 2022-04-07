@@ -10,6 +10,7 @@ var timesListDiv = $('#times-list');
 // Search button creates URL, erases any current searches, fetches,
 // and loads new searches.
 
+
 searchBtn.on('click', function() {
   var searchParam = search.val();
   //create URL:
